@@ -10,17 +10,18 @@
 		BF8A62102BB9900600CE2D53 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A620F2BB9900600CE2D53 /* Main.swift */; };
 		BF8A62142BB9900700CE2D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62132BB9900700CE2D53 /* Assets.xcassets */; };
 		BF8A62182BB9900700CE2D53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62172BB9900700CE2D53 /* Preview Assets.xcassets */; };
+		BF8A623C2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */; };
+		BF8A623D2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */; };
+		BF8A62422BB993BD00CE2D53 /* orderBookEntrySell.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62412BB993BD00CE2D53 /* orderBookEntrySell.json */; };
+		BF8A62442BB996F900CE2D53 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62432BB996F900CE2D53 /* Parser.swift */; };
+		BF8A62452BB996F900CE2D53 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62432BB996F900CE2D53 /* Parser.swift */; };
+		BF8A62472BB997C400CE2D53 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62462BB997C400CE2D53 /* JSONLoader.swift */; };
+		BF8A62492BB998A200CE2D53 /* OrderBookEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */; };
+		BF8A624B2BB999C500CE2D53 /* orderBookEntryBuy.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		BF8A621E2BB9900700CE2D53 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF8A62042BB9900600CE2D53 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF8A620B2BB9900600CE2D53;
-			remoteInfo = BuyHighSellLow;
-		};
-		BF8A62282BB9900700CE2D53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF8A62042BB9900600CE2D53 /* Project object */;
 			proxyType = 1;
@@ -36,7 +37,12 @@
 		BF8A62152BB9900700CE2D53 /* BuyHighSellLow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuyHighSellLow.entitlements; sourceTree = "<group>"; };
 		BF8A62172BB9900700CE2D53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF8A621D2BB9900700CE2D53 /* BuyHighSellLowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyHighSellLowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF8A62272BB9900700CE2D53 /* BuyHighSellLowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyHighSellLowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookEntry.swift; sourceTree = "<group>"; };
+		BF8A62412BB993BD00CE2D53 /* orderBookEntrySell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookEntrySell.json; sourceTree = "<group>"; };
+		BF8A62432BB996F900CE2D53 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		BF8A62462BB997C400CE2D53 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookEntryTests.swift; sourceTree = "<group>"; };
+		BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookEntryBuy.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF8A62242BB9900700CE2D53 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,7 +68,6 @@
 			children = (
 				BF8A620E2BB9900600CE2D53 /* BuyHighSellLow */,
 				BF8A62202BB9900700CE2D53 /* BuyHighSellLowTests */,
-				BF8A622A2BB9900700CE2D53 /* BuyHighSellLowUITests */,
 				BF8A620D2BB9900600CE2D53 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +77,6 @@
 			children = (
 				BF8A620C2BB9900600CE2D53 /* BuyHighSellLow.app */,
 				BF8A621D2BB9900700CE2D53 /* BuyHighSellLowTests.xctest */,
-				BF8A62272BB9900700CE2D53 /* BuyHighSellLowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +84,7 @@
 		BF8A620E2BB9900600CE2D53 /* BuyHighSellLow */ = {
 			isa = PBXGroup;
 			children = (
+				BF8A623A2BB9907400CE2D53 /* Model */,
 				BF8A620F2BB9900600CE2D53 /* Main.swift */,
 				BF8A62132BB9900700CE2D53 /* Assets.xcassets */,
 				BF8A62152BB9900700CE2D53 /* BuyHighSellLow.entitlements */,
@@ -106,15 +104,21 @@
 		BF8A62202BB9900700CE2D53 /* BuyHighSellLowTests */ = {
 			isa = PBXGroup;
 			children = (
+				BF8A62462BB997C400CE2D53 /* JSONLoader.swift */,
+				BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */,
 			);
 			path = BuyHighSellLowTests;
 			sourceTree = "<group>";
 		};
-		BF8A622A2BB9900700CE2D53 /* BuyHighSellLowUITests */ = {
+		BF8A623A2BB9907400CE2D53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */,
+				BF8A62412BB993BD00CE2D53 /* orderBookEntrySell.json */,
+				BF8A62432BB996F900CE2D53 /* Parser.swift */,
+				BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */,
 			);
-			path = BuyHighSellLowUITests;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,24 +159,6 @@
 			productReference = BF8A621D2BB9900700CE2D53 /* BuyHighSellLowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BF8A62262BB9900700CE2D53 /* BuyHighSellLowUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF8A62372BB9900700CE2D53 /* Build configuration list for PBXNativeTarget "BuyHighSellLowUITests" */;
-			buildPhases = (
-				BF8A62232BB9900700CE2D53 /* Sources */,
-				BF8A62242BB9900700CE2D53 /* Frameworks */,
-				BF8A62252BB9900700CE2D53 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF8A62292BB9900700CE2D53 /* PBXTargetDependency */,
-			);
-			name = BuyHighSellLowUITests;
-			productName = BuyHighSellLowUITests;
-			productReference = BF8A62272BB9900700CE2D53 /* BuyHighSellLowUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -188,10 +174,7 @@
 					};
 					BF8A621C2BB9900700CE2D53 = {
 						CreatedOnToolsVersion = 15.3;
-						TestTargetID = BF8A620B2BB9900600CE2D53;
-					};
-					BF8A62262BB9900700CE2D53 = {
-						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = BF8A620B2BB9900600CE2D53;
 					};
 				};
@@ -211,7 +194,6 @@
 			targets = (
 				BF8A620B2BB9900600CE2D53 /* BuyHighSellLow */,
 				BF8A621C2BB9900700CE2D53 /* BuyHighSellLowTests */,
-				BF8A62262BB9900700CE2D53 /* BuyHighSellLowUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,18 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8A62182BB9900700CE2D53 /* Preview Assets.xcassets in Resources */,
+				BF8A62422BB993BD00CE2D53 /* orderBookEntrySell.json in Resources */,
 				BF8A62142BB9900700CE2D53 /* Assets.xcassets in Resources */,
+				BF8A624B2BB999C500CE2D53 /* orderBookEntryBuy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BF8A621B2BB9900700CE2D53 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF8A62252BB9900700CE2D53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,6 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8A62102BB9900600CE2D53 /* Main.swift in Sources */,
+				BF8A623C2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
+				BF8A62442BB996F900CE2D53 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,13 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF8A62232BB9900700CE2D53 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BF8A62492BB998A200CE2D53 /* OrderBookEntryTests.swift in Sources */,
+				BF8A62452BB996F900CE2D53 /* Parser.swift in Sources */,
+				BF8A623D2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
+				BF8A62472BB997C400CE2D53 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +248,6 @@
 			isa = PBXTargetDependency;
 			target = BF8A620B2BB9900600CE2D53 /* BuyHighSellLow */;
 			targetProxy = BF8A621E2BB9900700CE2D53 /* PBXContainerItemProxy */;
-		};
-		BF8A62292BB9900700CE2D53 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF8A620B2BB9900600CE2D53 /* BuyHighSellLow */;
-			targetProxy = BF8A62282BB9900700CE2D53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -476,6 +447,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 25WL36ABTN;
@@ -488,6 +460,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuyHighSellLow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BuyHighSellLow";
@@ -499,6 +472,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 25WL36ABTN;
@@ -514,50 +488,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuyHighSellLow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BuyHighSellLow";
-			};
-			name = Release;
-		};
-		BF8A62382BB9900700CE2D53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25WL36ABTN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.missingems.oracle.BuyHighSellLowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BuyHighSellLow;
-			};
-			name = Debug;
-		};
-		BF8A62392BB9900700CE2D53 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25WL36ABTN;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.missingems.oracle.BuyHighSellLowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BuyHighSellLow;
 			};
 			name = Release;
 		};
@@ -587,15 +517,6 @@
 			buildConfigurations = (
 				BF8A62352BB9900700CE2D53 /* Debug */,
 				BF8A62362BB9900700CE2D53 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF8A62372BB9900700CE2D53 /* Build configuration list for PBXNativeTarget "BuyHighSellLowUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF8A62382BB9900700CE2D53 /* Debug */,
-				BF8A62392BB9900700CE2D53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
