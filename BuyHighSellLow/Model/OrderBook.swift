@@ -56,9 +56,20 @@ final class OrderBook {
       }
     }
     
-    let bids = Array(entries.filter { $0.side == .buy }.sorted { $0.price > $1.price }.prefix(20))
-    let asks = Array(entries.filter { $0.side == .sell }.sorted { $0.price < $1.price }.prefix(20))
-    sides = Sides(bids: bids, asks: asks)
+    func calculateAccumulatedSizes(for orders: [OrderBookEntry], ascending: Bool) -> [OrderBookEntry] {
+      let sortedOrders = orders.sorted { ascending ? $0.price < $1.price : $0.price > $1.price }
+      var accumulatedSize = 0.0
+      
+      return sortedOrders.map { order in
+        accumulatedSize += order.size ?? 0.0
+        return OrderBookEntry(id: order.id, price: order.price, side: order.side, size: order.size, accumulatedSize: accumulatedSize, symbol: order.symbol)
+      }
+    }
+    
+    sides = Sides(
+      bids: calculateAccumulatedSizes(for: Array(entries.filter { $0.side == .buy }.prefix(20)), ascending: false),
+      asks: calculateAccumulatedSizes(for: Array(entries.filter { $0.side == .sell }.prefix(20)), ascending: true)
+    )
   }
 }
 
