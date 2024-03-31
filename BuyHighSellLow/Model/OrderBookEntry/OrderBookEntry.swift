@@ -13,8 +13,20 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
   let id: Int
   let price: Double
   let side: Side
-  let size: Int?
+  let size: Double?
   let symbol: String
+  
+  var displayPrice: String {
+    String(format: "%.1f", price)
+  }
+  
+  var displaySize: String? {
+    if let size {
+      return String(format: "%.4f", size / price)
+    } else {
+      return nil
+    }
+  }
   
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -22,7 +34,7 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
     id = try container.decode(Int.self, forKey: .id)
     price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0
     side = try container.decode(Side.self, forKey: .side)
-    size = try container.decodeIfPresent(Int.self, forKey: .size)
+    size = try container.decodeIfPresent(Double.self, forKey: .size)
     symbol = try container.decode(String.self, forKey: .symbol)
   }
   
@@ -30,7 +42,7 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
     id: Int,
     price: Double = 0,
     side: OrderBookEntry.Side,
-    size: Int? = nil,
+    size: Double? = nil,
     symbol: String
   ) {
     self.id = id
