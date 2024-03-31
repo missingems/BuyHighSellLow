@@ -22,10 +22,10 @@ struct RootView: View {
         }
         .pickerStyle(.segmented).padding(.horizontal, 16.0)
         
-        if let view = try? OrderBookView(viewModel: OrderBookViewModel()), selectedTab == 0 {
-          view
-        } else if selectedTab == 1 {
-          Text("recent trades")
+        if let bookOrderView = try? OrderBookView(viewModel: OrderBookViewModel()), selectedTab == 0 {
+          bookOrderView
+        } else if let recentTradeView = try? TradeView(viewModel: TradeViewModel()), selectedTab == 1 {
+          recentTradeView
         }
       }
       .navigationBarTitleDisplayMode(.inline).navigationTitle("XBT/USD")
