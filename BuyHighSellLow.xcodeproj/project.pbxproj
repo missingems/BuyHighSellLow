@@ -25,6 +25,8 @@
 		BF8A62582BB99EC600CE2D53 /* orderBookMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62572BB99EC500CE2D53 /* orderBookMessage.json */; };
 		BF8A625B2BB9A0ED00CE2D53 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */; };
 		BF8A625D2BB9A95A00CE2D53 /* OrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625C2BB9A95A00CE2D53 /* OrderBookTests.swift */; };
+		BF8A625F2BB9B50200CE2D53 /* OrderBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */; };
+		BF8A62602BB9B50900CE2D53 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,7 @@
 		BF8A62572BB99EC500CE2D53 /* orderBookMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookMessage.json; sourceTree = "<group>"; };
 		BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		BF8A625C2BB9A95A00CE2D53 /* OrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookTests.swift; sourceTree = "<group>"; };
+		BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8A62432BB996F900CE2D53 /* Parser.swift */,
+				BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */,
 				BF8A62502BB99B6800CE2D53 /* WebSocketMessage */,
 				BF8A624F2BB99B5A00CE2D53 /* OrderBookEntry */,
 			);
@@ -160,7 +164,7 @@
 		BF8A62592BB9A0DC00CE2D53 /* OrderBook */ = {
 			isa = PBXGroup;
 			children = (
-				BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */,
+				BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */,
 			);
 			path = OrderBook;
 			sourceTree = "<group>";
@@ -280,6 +284,7 @@
 				BF8A62102BB9900600CE2D53 /* Main.swift in Sources */,
 				BF8A62522BB99B7D00CE2D53 /* WebSocketMessage.swift in Sources */,
 				BF8A623C2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
+				BF8A625F2BB9B50200CE2D53 /* OrderBookViewModel.swift in Sources */,
 				BF8A62442BB996F900CE2D53 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +296,7 @@
 				BF8A62492BB998A200CE2D53 /* OrderBookEntryTests.swift in Sources */,
 				BF8A625D2BB9A95A00CE2D53 /* OrderBookTests.swift in Sources */,
 				BF8A62452BB996F900CE2D53 /* Parser.swift in Sources */,
+				BF8A62602BB9B50900CE2D53 /* OrderBook.swift in Sources */,
 				BF8A623D2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
 				BF8A62562BB99CD500CE2D53 /* WebSocketMessageTests.swift in Sources */,
 				BF8A62472BB997C400CE2D53 /* JSONLoader.swift in Sources */,
