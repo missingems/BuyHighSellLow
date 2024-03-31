@@ -80,7 +80,8 @@ struct OrderBookView: View {
               .font(.body)
               .fontWeight(.semibold)
               .monospaced()
-              .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
+              .frame(idealHeight: 36)
+              .padding(.trailing, 8.0)
           }
         }
       }
@@ -105,7 +106,8 @@ struct OrderBookView: View {
               .font(.body)
               .fontWeight(.semibold)
               .monospaced()
-              .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
+              .frame(idealHeight: 36)
+              .padding(.leading, 8.0)
           }
           
           Spacer()
