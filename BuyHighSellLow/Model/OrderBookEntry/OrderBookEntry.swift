@@ -54,6 +54,10 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
     self.accumulatedSize = accumulatedSize
     self.symbol = symbol
   }
+  
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    return lhs.id == rhs.id
+  }
 }
 
 extension OrderBookEntry {
