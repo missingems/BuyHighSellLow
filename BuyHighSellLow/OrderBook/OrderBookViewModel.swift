@@ -16,13 +16,11 @@ final class OrderBookViewModel {
   init() throws {
     displayingSides = OrderBook.Sides()
     service = try WebSocketService(subscription: .orderBook)
-    print("init")
   }
   
   func update(_ action: Action) {
     switch action {
     case .viewAppeared:
-      print("appea")
       service.connect { [weak self] value in
         self?.didReceiveMessage(value)
       }
@@ -45,7 +43,6 @@ final class OrderBookViewModel {
     case .partial:
       self.orderBook = try? OrderBook(webSocketMessage)
       self.displayingSides = self.orderBook?.sides ?? OrderBook.Sides()
-      
     }
   }
   
