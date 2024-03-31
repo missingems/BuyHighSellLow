@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF8A62102BB9900600CE2D53 /* BuyHighSellLowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A620F2BB9900600CE2D53 /* BuyHighSellLowApp.swift */; };
-		BF8A62122BB9900600CE2D53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62112BB9900600CE2D53 /* ContentView.swift */; };
+		BF8A62102BB9900600CE2D53 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A620F2BB9900600CE2D53 /* Main.swift */; };
 		BF8A62142BB9900700CE2D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62132BB9900700CE2D53 /* Assets.xcassets */; };
 		BF8A62182BB9900700CE2D53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62172BB9900700CE2D53 /* Preview Assets.xcassets */; };
-		BF8A62222BB9900700CE2D53 /* BuyHighSellLowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62212BB9900700CE2D53 /* BuyHighSellLowTests.swift */; };
-		BF8A622C2BB9900700CE2D53 /* BuyHighSellLowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A622B2BB9900700CE2D53 /* BuyHighSellLowUITests.swift */; };
-		BF8A622E2BB9900700CE2D53 /* BuyHighSellLowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A622D2BB9900700CE2D53 /* BuyHighSellLowUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,16 +31,12 @@
 
 /* Begin PBXFileReference section */
 		BF8A620C2BB9900600CE2D53 /* BuyHighSellLow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyHighSellLow.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF8A620F2BB9900600CE2D53 /* BuyHighSellLowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHighSellLowApp.swift; sourceTree = "<group>"; };
-		BF8A62112BB9900600CE2D53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF8A620F2BB9900600CE2D53 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		BF8A62132BB9900700CE2D53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF8A62152BB9900700CE2D53 /* BuyHighSellLow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuyHighSellLow.entitlements; sourceTree = "<group>"; };
 		BF8A62172BB9900700CE2D53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF8A621D2BB9900700CE2D53 /* BuyHighSellLowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyHighSellLowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF8A62212BB9900700CE2D53 /* BuyHighSellLowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHighSellLowTests.swift; sourceTree = "<group>"; };
 		BF8A62272BB9900700CE2D53 /* BuyHighSellLowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuyHighSellLowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF8A622B2BB9900700CE2D53 /* BuyHighSellLowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHighSellLowUITests.swift; sourceTree = "<group>"; };
-		BF8A622D2BB9900700CE2D53 /* BuyHighSellLowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHighSellLowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +87,7 @@
 		BF8A620E2BB9900600CE2D53 /* BuyHighSellLow */ = {
 			isa = PBXGroup;
 			children = (
-				BF8A620F2BB9900600CE2D53 /* BuyHighSellLowApp.swift */,
-				BF8A62112BB9900600CE2D53 /* ContentView.swift */,
+				BF8A620F2BB9900600CE2D53 /* Main.swift */,
 				BF8A62132BB9900700CE2D53 /* Assets.xcassets */,
 				BF8A62152BB9900700CE2D53 /* BuyHighSellLow.entitlements */,
 				BF8A62162BB9900700CE2D53 /* Preview Content */,
@@ -115,7 +106,6 @@
 		BF8A62202BB9900700CE2D53 /* BuyHighSellLowTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF8A62212BB9900700CE2D53 /* BuyHighSellLowTests.swift */,
 			);
 			path = BuyHighSellLowTests;
 			sourceTree = "<group>";
@@ -123,8 +113,6 @@
 		BF8A622A2BB9900700CE2D53 /* BuyHighSellLowUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BF8A622B2BB9900700CE2D53 /* BuyHighSellLowUITests.swift */,
-				BF8A622D2BB9900700CE2D53 /* BuyHighSellLowUITestsLaunchTests.swift */,
 			);
 			path = BuyHighSellLowUITests;
 			sourceTree = "<group>";
@@ -259,8 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8A62122BB9900600CE2D53 /* ContentView.swift in Sources */,
-				BF8A62102BB9900600CE2D53 /* BuyHighSellLowApp.swift in Sources */,
+				BF8A62102BB9900600CE2D53 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8A62222BB9900700CE2D53 /* BuyHighSellLowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8A622E2BB9900700CE2D53 /* BuyHighSellLowUITestsLaunchTests.swift in Sources */,
-				BF8A622C2BB9900700CE2D53 /* BuyHighSellLowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

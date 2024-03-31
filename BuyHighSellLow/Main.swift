@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct BuyHighSellLowApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+struct Main: App {
+  var body: some Scene {
+    WindowGroup {
     }
+  }
 }
+
