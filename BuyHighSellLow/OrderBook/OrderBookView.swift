@@ -42,7 +42,7 @@ struct OrderBookView: View {
                 .font(.body)
                 .fontWeight(.semibold)
                 .monospaced()
-                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 5))
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
                 .background {
                   HStack {
                     Spacer()
@@ -70,7 +70,7 @@ struct OrderBookView: View {
                 .font(.body)
                 .fontWeight(.semibold)
                 .monospaced()
-                .padding(EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 0))
+                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
                 .background {
                   HStack {
                     Color.sell.opacity(0.2)
