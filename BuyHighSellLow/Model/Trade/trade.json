@@ -1,0 +1,13 @@
+{
+  "timestamp": "2024-03-31T19:01:27.936Z",
+  "symbol": "XBTJ24",
+  "side": "Sell",
+  "size": 10000,
+  "price": 72600,
+  "tickDirection": "MinusTick",
+  "trdMatchID": "00000000-006d-1000-0000-00062b33665a",
+  "grossValue": 13774100,
+  "homeNotional": 0.137741,
+  "foreignNotional": 10000,
+  "trdType": "Regular"
+}

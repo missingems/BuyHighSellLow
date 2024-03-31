@@ -54,10 +54,14 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
     self.accumulatedSize = accumulatedSize
     self.symbol = symbol
   }
+  
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    return lhs.id == rhs.id
+  }
 }
 
 extension OrderBookEntry {
-  enum Side: String, Codable, Equatable {
+  enum Side: String, Decodable, Equatable {
     case sell = "Sell"
     case buy = "Buy"
   }

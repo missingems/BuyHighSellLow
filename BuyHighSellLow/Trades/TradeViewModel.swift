@@ -1,21 +1,19 @@
 //
-//  OrderBookViewModel.swift
+//  TradeViewModel.swift
 //  BuyHighSellLow
 //
-//  Created by Jun on 31/3/24.
+//  Created by Jun on 1/4/24.
 //
 
 import Foundation
 
 @Observable
-final class OrderBookViewModel {
-  private(set) var displayingSides: OrderBook.Sides
-  private var orderBook: OrderBook?
+final class TradeViewModel {
+  private(set) var trades: [Trade] = []
   private let service: WebSocketService
   
   init() throws {
-    displayingSides = OrderBook.Sides()
-    service = try WebSocketService(subscription: .orderBook)
+    service = try WebSocketService(subscription: .recentTrades)
   }
   
   func update(_ action: Action) {
@@ -31,19 +29,24 @@ final class OrderBookViewModel {
   }
   
   private func didReceiveMessage(_ message: String) {
-    guard let webSocketMessage = try? Parser<WebSocketMessage<OrderBookEntry>>().decode(from: message) else {
+    guard let webSocketMessage = try? Parser<WebSocketMessage<Trade>>().decode(from: message) else {
       return
     }
     
+    var trades = self.trades
+    
     switch webSocketMessage.action {
-    case .delete, .insert, .update:
-      self.orderBook?.send(newMessage: webSocketMessage)
-      self.displayingSides = self.orderBook?.sides ?? OrderBook.Sides()
+    case .insert:
+      trades.insert(contentsOf: webSocketMessage.data, at: 0)
+      
+    case .delete, .update:
+      break
       
     case .partial:
-      self.orderBook = try? OrderBook(webSocketMessage)
-      self.displayingSides = self.orderBook?.sides ?? OrderBook.Sides()
+      trades = webSocketMessage.data
     }
+    
+    self.trades = Array(trades.prefix(30))
   }
   
   func calculateAccumatedSizeRatio(size: Double, entries: [OrderBookEntry]) -> Double {
@@ -55,7 +58,7 @@ final class OrderBookViewModel {
   }
 }
 
-extension OrderBookViewModel {
+extension TradeViewModel {
   enum Action {
     case viewAppeared
     case viewDisappeaered
