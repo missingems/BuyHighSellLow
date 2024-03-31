@@ -68,7 +68,7 @@ extension WebSocketService {
         return "{\"op\": \"subscribe\", \"args\": [\"orderBookL2_25:XBTUSD\"]}"
         
       case .recentTrades:
-        return "{\"op\": \"subscribe\", \"args\": [\"orderBookL2_25:XBTUSD\"]}"
+        return "{\"op\": \"subscribe\", \"args\": [\"trade:XBTUSD\"]}"
       }
     }
   }
