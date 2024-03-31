@@ -57,7 +57,7 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
 }
 
 extension OrderBookEntry {
-  enum Side: String, Codable, Equatable {
+  enum Side: String, Decodable, Equatable {
     case sell = "Sell"
     case buy = "Buy"
   }

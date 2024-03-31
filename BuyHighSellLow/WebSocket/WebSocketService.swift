@@ -60,10 +60,14 @@ extension WebSocketService {
 extension WebSocketService {
   enum Subscription {
     case orderBook
+    case recentTrades
     
     var subscriptionMessage: String {
       switch self {
       case .orderBook:
+        return "{\"op\": \"subscribe\", \"args\": [\"orderBookL2_25:XBTUSD\"]}"
+        
+      case .recentTrades:
         return "{\"op\": \"subscribe\", \"args\": [\"orderBookL2_25:XBTUSD\"]}"
       }
     }
