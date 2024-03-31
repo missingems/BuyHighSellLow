@@ -15,7 +15,7 @@ struct OrderBookView: View {
       VStack(spacing: 0) {
         header.padding(.horizontal, 16.0).padding(.bottom, 5.0)
         
-        Divider()
+        Divider().padding(.leading, 16.0)
         
         Spacer(minLength: 0)
         
