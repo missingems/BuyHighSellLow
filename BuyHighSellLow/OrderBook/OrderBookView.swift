@@ -12,99 +12,117 @@ struct OrderBookView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      HStack {
-        Text("Qty").font(.caption).fontWeight(.medium)
-        Spacer()
-        Text("Price (USD)").font(.caption).fontWeight(.medium)
-        Spacer()
-        Text("Qty").font(.caption).fontWeight(.medium)
-      }
-      .padding(.horizontal, 16.0)
+      header.padding(.horizontal, 16.0).padding(.bottom, 5.0)
       
-      Spacer().frame(height: 5.0)
       Divider()
       
-      HStack(spacing: 0) {
-        GeometryReader { proxy in
-          List(viewModel.displayingSides.bids) { bid in
-            HStack {
-              if let displaySize = bid.displaySize {
-                Text(displaySize)
-                  .font(.body)
-                  .monospaced()
-              }
-              
-              Spacer()
-              
-              Text(bid.displayPrice)
-                .multilineTextAlignment(.trailing)
-                .foregroundStyle(Color.buy)
-                .font(.body)
-                .fontWeight(.semibold)
-                .monospaced()
-                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
-                .background {
-                  HStack {
-                    Spacer()
-                    Color.buy.opacity(0.2)
-                      .frame(
-                        width: viewModel.calculateAccumatedSizeRatio(
-                          size: bid.accumulatedSize,
-                          entries: viewModel.displayingSides.bids
-                        ) * proxy.size.width / 2
-                      )
-                  }
-                }
-            }
-            .listRowInsets(EdgeInsets(top: 0, leading: 16.0, bottom: 0, trailing: 0))
-            .listRowSeparator(.hidden)
-          }
-          .animation(.default, value: viewModel.displayingSides.bids)
+      Spacer(minLength: 0)
+      
+      if viewModel.displayingSides.bids.isEmpty, viewModel.displayingSides.asks.isEmpty {
+        ProgressView()
+        Spacer()
+      } else {
+        HStack(spacing: 0) {
+          buyOrderList
+          sellOrderList
         }
-        
-        GeometryReader { proxy in
-          List(viewModel.displayingSides.asks) { ask in
-            HStack {
-              Text(ask.displayPrice)
-                .foregroundStyle(Color.sell)
-                .font(.body)
-                .fontWeight(.semibold)
-                .monospaced()
-                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
-                .background {
-                  HStack {
-                    Color.sell.opacity(0.2)
-                      .frame(
-                        width: viewModel.calculateAccumatedSizeRatio(
-                          size: ask.accumulatedSize,
-                          entries: viewModel.displayingSides.asks
-                        ) * proxy.size.width / 2
-                      )
-                    
-                    Spacer()
-                  }
-                }
-              
-              Spacer()
-              
-              if let displaySize = ask.displaySize {
-                Text(displaySize)
-                  .multilineTextAlignment(.trailing)
-                  .font(.body)
-                  .monospaced()
-              }
-            }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16.0))
-            .listRowSeparator(.hidden)
-          }
-        }
-        .animation(.default, value: viewModel.displayingSides.bids)
+        .environment(\.defaultMinListRowHeight, 0)
+        .listStyle(.plain)
       }
-      .environment(\.defaultMinListRowHeight, 0)
-      .listStyle(.plain)
     }
     .onAppear {
       viewModel.update(.viewAppeared)
+    }.onDisappear {
+      viewModel.update(.viewDisappeaered)
+    }
+  }
+  
+  private var header: some View {
+    HStack {
+      Text("Qty").font(.caption).fontWeight(.medium)
+      Spacer()
+      Text("Price (USD)").font(.caption).fontWeight(.medium)
+      Spacer()
+      Text("Qty").font(.caption).fontWeight(.medium)
+    }
+  }
+  
+  private var buyOrderList: some View {
+    GeometryReader { proxy in
+      List(viewModel.displayingSides.bids) { bid in
+        HStack {
+          if let displaySize = bid.displaySize {
+            Text(displaySize)
+              .font(.body)
+              .monospaced()
+          }
+          
+          Spacer()
+          
+          Text(bid.displayPrice)
+            .multilineTextAlignment(.trailing)
+            .foregroundStyle(Color.buy)
+            .font(.body)
+            .fontWeight(.semibold)
+            .monospaced()
+            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
+            .background {
+              HStack {
+                Spacer()
+                Color.buy.opacity(0.2)
+                  .frame(
+                    width: viewModel.calculateAccumatedSizeRatio(
+                      size: bid.accumulatedSize,
+                      entries: viewModel.displayingSides.bids
+                    ) * proxy.size.width / 2
+                  )
+              }
+            }
+        }
+        .listRowInsets(EdgeInsets(top: 0, leading: 16.0, bottom: 0, trailing: 0))
+        .listRowSeparator(.hidden)
+      }
+      .animation(.default, value: viewModel.displayingSides.bids)
+    }
+  }
+  
+  private var sellOrderList: some View {
+    GeometryReader { proxy in
+      List(viewModel.displayingSides.asks) { ask in
+        HStack {
+          Text(ask.displayPrice)
+            .foregroundStyle(Color.sell)
+            .font(.body)
+            .fontWeight(.semibold)
+            .monospaced()
+            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
+            .background {
+              HStack {
+                Color.sell.opacity(0.2)
+                  .frame(
+                    width: viewModel.calculateAccumatedSizeRatio(
+                      size: ask.accumulatedSize,
+                      entries: viewModel.displayingSides.asks
+                    ) * proxy.size.width / 2
+                  )
+                
+                Spacer()
+              }
+            }
+          
+          Spacer()
+          
+          if let displaySize = ask.displaySize {
+            Text(displaySize)
+              .multilineTextAlignment(.trailing)
+              .font(.body)
+              .monospaced()
+          }
+        }
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16.0))
+        .listRowSeparator(.hidden)
+      }
+      .animation(.default, value: viewModel.displayingSides.asks)
     }
   }
 }

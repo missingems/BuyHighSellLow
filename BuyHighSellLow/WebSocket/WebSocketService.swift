@@ -30,6 +30,10 @@ final class WebSocketService: WebSocketDelegate {
     socket.connect()
   }
   
+  func disconnect() {
+    socket.disconnect()
+  }
+  
   func didReceive(
     event: WebSocketEvent,
     client: any WebSocketClient
