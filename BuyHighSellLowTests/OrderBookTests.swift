@@ -9,8 +9,8 @@ import XCTest
 @testable import BuyHighSellLow
 
 final class OrderBookTests: XCTestCase {
-  func test_partial_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_partial_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -33,8 +33,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_update_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_update_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -44,7 +44,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .update,
         data: [
@@ -67,8 +67,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_insert_buy_highPrice_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_insert_buy_highPrice_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -78,7 +78,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .insert,
         data: [
@@ -101,8 +101,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_insert_buy_lowerPrice_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_insert_buy_lowerPrice_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -112,7 +112,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .insert,
         data: [
@@ -135,8 +135,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_insert_sell_higherPrice_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_insert_sell_higherPrice_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -146,7 +146,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .insert,
         data: [
@@ -169,8 +169,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_insert_sell_lowerPrice_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_insert_sell_lowerPrice_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -180,7 +180,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .insert,
         data: [
@@ -203,8 +203,8 @@ final class OrderBookTests: XCTestCase {
     )
   }
   
-  func test_delete_sides() async throws {
-    let orderBook = try await OrderBook(
+  func test_delete_sides() throws {
+    let orderBook = try OrderBook(
       .init(
         action: .partial,
         data: [
@@ -214,7 +214,7 @@ final class OrderBookTests: XCTestCase {
       )
     )
     
-    await orderBook.send(
+    orderBook.send(
       newMessage: .init(
         action: .delete,
         data: [

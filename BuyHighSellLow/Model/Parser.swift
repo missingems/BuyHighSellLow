@@ -18,4 +18,16 @@ struct Parser<Model: Decodable> {
       throw error
     }
   }
+  
+  func decode(from jsonString: String) throws -> Model {
+    let jsonData = Data(jsonString.utf8)
+    let decoder = JSONDecoder()
+    
+    do {
+      let message = try decoder.decode(Model.self, from: jsonData)
+      return message
+    } catch {
+      throw error
+    }
+  }
 }
