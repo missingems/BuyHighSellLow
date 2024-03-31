@@ -19,6 +19,10 @@
 		BF8A62492BB998A200CE2D53 /* OrderBookEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */; };
 		BF8A624B2BB999C500CE2D53 /* orderBookEntryBuy.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */; };
 		BF8A624E2BB99ACD00CE2D53 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = BF8A624D2BB99ACD00CE2D53 /* Starscream */; };
+		BF8A62522BB99B7D00CE2D53 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62512BB99B7D00CE2D53 /* WebSocketMessage.swift */; };
+		BF8A62542BB99CBC00CE2D53 /* orderBookMessageWithData.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62532BB99CBC00CE2D53 /* orderBookMessageWithData.json */; };
+		BF8A62562BB99CD500CE2D53 /* WebSocketMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62552BB99CD500CE2D53 /* WebSocketMessageTests.swift */; };
+		BF8A62582BB99EC600CE2D53 /* orderBookMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = BF8A62572BB99EC500CE2D53 /* orderBookMessage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		BF8A62462BB997C400CE2D53 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookEntryTests.swift; sourceTree = "<group>"; };
 		BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookEntryBuy.json; sourceTree = "<group>"; };
+		BF8A62512BB99B7D00CE2D53 /* WebSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
+		BF8A62532BB99CBC00CE2D53 /* orderBookMessageWithData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookMessageWithData.json; sourceTree = "<group>"; };
+		BF8A62552BB99CD500CE2D53 /* WebSocketMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketMessageTests.swift; sourceTree = "<group>"; };
+		BF8A62572BB99EC500CE2D53 /* orderBookMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderBookMessage.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			children = (
 				BF8A62462BB997C400CE2D53 /* JSONLoader.swift */,
 				BF8A62482BB998A200CE2D53 /* OrderBookEntryTests.swift */,
+				BF8A62552BB99CD500CE2D53 /* WebSocketMessageTests.swift */,
 			);
 			path = BuyHighSellLowTests;
 			sourceTree = "<group>";
@@ -115,12 +124,31 @@
 		BF8A623A2BB9907400CE2D53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */,
-				BF8A62412BB993BD00CE2D53 /* orderBookEntrySell.json */,
+				BF8A62502BB99B6800CE2D53 /* WebSocketMessage */,
+				BF8A624F2BB99B5A00CE2D53 /* OrderBookEntry */,
 				BF8A62432BB996F900CE2D53 /* Parser.swift */,
-				BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BF8A624F2BB99B5A00CE2D53 /* OrderBookEntry */ = {
+			isa = PBXGroup;
+			children = (
+				BF8A624A2BB999C500CE2D53 /* orderBookEntryBuy.json */,
+				BF8A62412BB993BD00CE2D53 /* orderBookEntrySell.json */,
+				BF8A623B2BB9908200CE2D53 /* OrderBookEntry.swift */,
+			);
+			path = OrderBookEntry;
+			sourceTree = "<group>";
+		};
+		BF8A62502BB99B6800CE2D53 /* WebSocketMessage */ = {
+			isa = PBXGroup;
+			children = (
+				BF8A62572BB99EC500CE2D53 /* orderBookMessage.json */,
+				BF8A62532BB99CBC00CE2D53 /* orderBookMessageWithData.json */,
+				BF8A62512BB99B7D00CE2D53 /* WebSocketMessage.swift */,
+			);
+			path = WebSocketMessage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8A62182BB9900700CE2D53 /* Preview Assets.xcassets in Resources */,
+				BF8A62542BB99CBC00CE2D53 /* orderBookMessageWithData.json in Resources */,
 				BF8A62422BB993BD00CE2D53 /* orderBookEntrySell.json in Resources */,
+				BF8A62582BB99EC600CE2D53 /* orderBookMessage.json in Resources */,
 				BF8A62142BB9900700CE2D53 /* Assets.xcassets in Resources */,
 				BF8A624B2BB999C500CE2D53 /* orderBookEntryBuy.json in Resources */,
 			);
@@ -233,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8A62102BB9900600CE2D53 /* Main.swift in Sources */,
+				BF8A62522BB99B7D00CE2D53 /* WebSocketMessage.swift in Sources */,
 				BF8A623C2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
 				BF8A62442BB996F900CE2D53 /* Parser.swift in Sources */,
 			);
@@ -245,6 +276,7 @@
 				BF8A62492BB998A200CE2D53 /* OrderBookEntryTests.swift in Sources */,
 				BF8A62452BB996F900CE2D53 /* Parser.swift in Sources */,
 				BF8A623D2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
+				BF8A62562BB99CD500CE2D53 /* WebSocketMessageTests.swift in Sources */,
 				BF8A62472BB997C400CE2D53 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
