@@ -43,7 +43,16 @@ final class OrderBookViewModel {
     case .partial:
       self.orderBook = try? OrderBook(webSocketMessage)
       self.displayingSides = self.orderBook?.sides ?? OrderBook.Sides()
+      
     }
+  }
+  
+  func calculateAccumatedSizeRatio(size: Double, entries: [OrderBookEntry]) -> Double {
+    guard let accumulatedSize = entries.last?.accumulatedSize else {
+      return 0
+    }
+    
+    return size / accumulatedSize
   }
 }
 

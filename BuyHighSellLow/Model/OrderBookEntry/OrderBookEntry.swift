@@ -15,6 +15,7 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
   let side: Side
   let size: Double?
   let symbol: String
+  var accumulatedSize: Double = 0
   
   var displayPrice: String {
     String(format: "%.1f", price)
@@ -43,12 +44,14 @@ struct OrderBookEntry: Decodable, Identifiable, Equatable {
     price: Double = 0,
     side: OrderBookEntry.Side,
     size: Double? = nil,
+    accumulatedSize: Double = 0,
     symbol: String
   ) {
     self.id = id
     self.price = price
     self.side = side
     self.size = size
+    self.accumulatedSize = accumulatedSize
     self.symbol = symbol
   }
 }
