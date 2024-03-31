@@ -11,18 +11,18 @@ struct OrderBookView: View {
   var viewModel: OrderBookViewModel
   
   var body: some View {
-    VStack(spacing: 0) {
-      header.padding(.horizontal, 16.0).padding(.bottom, 5.0)
-      
-      Divider()
-      
-      Spacer(minLength: 0)
-      
-      if viewModel.displayingSides.bids.isEmpty, viewModel.displayingSides.asks.isEmpty {
-        ProgressView()
-        Spacer()
-      } else {
-        GeometryReader { proxy in
+    GeometryReader { proxy in
+      VStack(spacing: 0) {
+        header.padding(.horizontal, 16.0).padding(.bottom, 5.0)
+        
+        Divider()
+        
+        Spacer(minLength: 0)
+        
+        if viewModel.displayingSides.bids.isEmpty, viewModel.displayingSides.asks.isEmpty {
+          ProgressView()
+          Spacer()
+        } else {
           ScrollView {
             HStack(spacing: 0) {
               buyOrderList(width: proxy.size.width)
@@ -42,6 +42,7 @@ struct OrderBookView: View {
     }
   }
   
+  @ViewBuilder
   private var header: some View {
     HStack {
       Text("Qty").font(.caption).fontWeight(.medium)
@@ -52,6 +53,7 @@ struct OrderBookView: View {
     }
   }
   
+  @ViewBuilder
   private func buyOrderList(width: CGFloat) -> some View {
     VStack(spacing: 0) {
       ForEach(viewModel.displayingSides.bids) { bid in
@@ -85,6 +87,7 @@ struct OrderBookView: View {
     }
   }
   
+  @ViewBuilder
   private func sellOrderList(width: CGFloat) -> some View {
     VStack(spacing: 0) {
       ForEach(viewModel.displayingSides.asks) { ask in
@@ -118,3 +121,4 @@ struct OrderBookView: View {
     }
   }
 }
+
