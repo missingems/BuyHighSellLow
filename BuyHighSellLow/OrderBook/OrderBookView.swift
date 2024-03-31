@@ -22,12 +22,17 @@ struct OrderBookView: View {
         ProgressView()
         Spacer()
       } else {
-        HStack(spacing: 0) {
-          buyOrderList
-          sellOrderList
+        GeometryReader { proxy in
+          ScrollView {
+            HStack(spacing: 0) {
+              buyOrderList(width: proxy.size.width)
+                .padding(EdgeInsets(top: 0, leading: 16.0, bottom: 0, trailing: 0))
+              
+              sellOrderList(width: proxy.size.width)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
+            }
+          }
         }
-        .environment(\.defaultMinListRowHeight, 0)
-        .listStyle(.plain)
       }
     }
     .onAppear {
@@ -47,9 +52,9 @@ struct OrderBookView: View {
     }
   }
   
-  private var buyOrderList: some View {
-    GeometryReader { proxy in
-      List(viewModel.displayingSides.bids) { bid in
+  private func buyOrderList(width: CGFloat) -> some View {
+    VStack(spacing: 0) {
+      ForEach(viewModel.displayingSides.bids) { bid in
         HStack {
           if let displaySize = bid.displaySize {
             Text(displaySize)
@@ -59,56 +64,46 @@ struct OrderBookView: View {
           
           Spacer()
           
-          Text(bid.displayPrice)
-            .multilineTextAlignment(.trailing)
-            .foregroundStyle(Color.buy)
-            .font(.body)
-            .fontWeight(.semibold)
-            .monospaced()
-            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
-            .background {
-              HStack {
-                Spacer()
-                Color.buy.opacity(0.2)
-                  .frame(
-                    width: viewModel.calculateAccumatedSizeRatio(
-                      size: bid.accumulatedSize,
-                      entries: viewModel.displayingSides.bids
-                    ) * proxy.size.width / 2
-                  )
-              }
-            }
+          ZStack(alignment: .trailing) {
+            Rectangle().fill(Color.buy.opacity(0.2)).frame(
+              width: viewModel.calculateAccumatedSizeRatio(
+                size: bid.accumulatedSize,
+                entries: viewModel.displayingSides.bids
+              ) * width / 4
+            )
+            
+            Text(bid.displayPrice)
+              .multilineTextAlignment(.trailing)
+              .foregroundStyle(Color.buy)
+              .font(.body)
+              .fontWeight(.semibold)
+              .monospaced()
+              .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
+          }
         }
-        .listRowInsets(EdgeInsets(top: 0, leading: 16.0, bottom: 0, trailing: 0))
-        .listRowSeparator(.hidden)
       }
-      .animation(.default, value: viewModel.displayingSides.bids)
     }
   }
   
-  private var sellOrderList: some View {
-    GeometryReader { proxy in
-      List(viewModel.displayingSides.asks) { ask in
+  private func sellOrderList(width: CGFloat) -> some View {
+    VStack(spacing: 0) {
+      ForEach(viewModel.displayingSides.asks) { ask in
         HStack {
-          Text(ask.displayPrice)
-            .foregroundStyle(Color.sell)
-            .font(.body)
-            .fontWeight(.semibold)
-            .monospaced()
-            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
-            .background {
-              HStack {
-                Color.sell.opacity(0.2)
-                  .frame(
-                    width: viewModel.calculateAccumatedSizeRatio(
-                      size: ask.accumulatedSize,
-                      entries: viewModel.displayingSides.asks
-                    ) * proxy.size.width / 2
-                  )
-                
-                Spacer()
-              }
-            }
+          ZStack(alignment: .leading) {
+            Rectangle().fill(Color.sell.opacity(0.2)).frame(
+              width: viewModel.calculateAccumatedSizeRatio(
+                size: ask.accumulatedSize,
+                entries: viewModel.displayingSides.asks
+              ) * width / 4
+            )
+            
+            Text(ask.displayPrice)
+              .foregroundStyle(Color.sell)
+              .font(.body)
+              .fontWeight(.semibold)
+              .monospaced()
+              .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 0))
+          }
           
           Spacer()
           
@@ -119,10 +114,7 @@ struct OrderBookView: View {
               .monospaced()
           }
         }
-        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16.0))
-        .listRowSeparator(.hidden)
       }
-      .animation(.default, value: viewModel.displayingSides.asks)
     }
   }
 }
