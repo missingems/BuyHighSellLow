@@ -11,17 +11,22 @@ import Starscream
 final class WebSocketService: WebSocketDelegate {
   private let socket: WebSocket
   private let subscription: Subscription
-  private var updateHandler: (String) -> Void
+  private var updateHandler: ((String) -> Void)?
   
-  init(subscription: Subscription, _ update: @escaping (String) -> Void) throws {
+  init(subscription: Subscription) throws {
     guard let url = URL(string: "wss://www.bitmex.com/realtime") else {
       throw WebSocketServiceError.invalidURL
     }
     
     self.subscription = subscription
-    updateHandler = update
+    
     socket = WebSocket(request: URLRequest(url: url))
     socket.delegate = self
+  }
+  
+  func connect(_ update: @escaping (String) -> ()) {
+    updateHandler = update
+    socket.disconnect()
     socket.connect()
   }
   
@@ -34,7 +39,7 @@ final class WebSocketService: WebSocketDelegate {
       socket.write(string: subscription.subscriptionMessage)
       
     case let .text(value):
-      updateHandler(value)
+      updateHandler?(value)
       
     case .binary, .disconnected, .ping, .pong, .viabilityChanged, .reconnectSuggested, .cancelled, .peerClosed, .error:
       break
