@@ -40,7 +40,7 @@ struct OrderBookView: View {
               .monospaced()
               .padding(.trailing, 5)
           }
-          .listRowInsets(EdgeInsets(top: 5, leading: 16.0, bottom: 5, trailing: 0))
+          .listRowInsets(EdgeInsets(top: 8, leading: 16.0, bottom: 8, trailing: 0))
           .listRowSeparator(.hidden)
         }
         
@@ -62,7 +62,7 @@ struct OrderBookView: View {
                 .monospaced()
             }
           }
-          .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 16.0))
+          .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 16.0))
           .listRowSeparator(.hidden)
         }
       }
