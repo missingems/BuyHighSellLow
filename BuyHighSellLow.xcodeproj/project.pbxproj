@@ -27,6 +27,7 @@
 		BF8A625D2BB9A95A00CE2D53 /* OrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625C2BB9A95A00CE2D53 /* OrderBookTests.swift */; };
 		BF8A625F2BB9B50200CE2D53 /* OrderBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */; };
 		BF8A62602BB9B50900CE2D53 /* OrderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */; };
+		BF8A62632BB9B5FD00CE2D53 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A62622BB9B5FD00CE2D53 /* WebSocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BF8A625A2BB9A0ED00CE2D53 /* OrderBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBook.swift; sourceTree = "<group>"; };
 		BF8A625C2BB9A95A00CE2D53 /* OrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookTests.swift; sourceTree = "<group>"; };
 		BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookViewModel.swift; sourceTree = "<group>"; };
+		BF8A62622BB9B5FD00CE2D53 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		BF8A620E2BB9900600CE2D53 /* BuyHighSellLow */ = {
 			isa = PBXGroup;
 			children = (
+				BF8A62612BB9B5F100CE2D53 /* WebSocket */,
 				BF8A62592BB9A0DC00CE2D53 /* OrderBook */,
 				BF8A623A2BB9907400CE2D53 /* Model */,
 				BF8A620F2BB9900600CE2D53 /* Main.swift */,
@@ -167,6 +170,14 @@
 				BF8A625E2BB9B50200CE2D53 /* OrderBookViewModel.swift */,
 			);
 			path = OrderBook;
+			sourceTree = "<group>";
+		};
+		BF8A62612BB9B5F100CE2D53 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				BF8A62622BB9B5FD00CE2D53 /* WebSocketService.swift */,
+			);
+			path = WebSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 				BF8A625B2BB9A0ED00CE2D53 /* OrderBook.swift in Sources */,
 				BF8A62102BB9900600CE2D53 /* Main.swift in Sources */,
 				BF8A62522BB99B7D00CE2D53 /* WebSocketMessage.swift in Sources */,
+				BF8A62632BB9B5FD00CE2D53 /* WebSocketService.swift in Sources */,
 				BF8A623C2BB9908200CE2D53 /* OrderBookEntry.swift in Sources */,
 				BF8A625F2BB9B50200CE2D53 /* OrderBookViewModel.swift in Sources */,
 				BF8A62442BB996F900CE2D53 /* Parser.swift in Sources */,
